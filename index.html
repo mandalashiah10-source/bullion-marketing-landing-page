@@ -253,31 +253,42 @@
           </li>-->
         </ul>
 
-        <form id="contactForm">
-          <label>Name
-            <input required placeholder="Your name">
-          </label>
-          <label>Email
-            <input type="email" required placeholder="you@company.com">
-          </label>
-          <label>Phone
-            <input type="tel" placeholder="+91">
-          </label>
-          <label>Service needed
-            <select>
-              <option>SEO &amp; Local SEO</option>
-              <option>Web Development</option>
-              <option>Video Editing</option>
-              <option>Social Media Marketing</option>
-              <option>Performance Ads</option>
-              <option>Content Creation</option>
-              <option>Printing Designing</option>
-              <option>Influencer Marketing</option>
-            </select>
-          </label>
-          <label>Message
-            <textarea placeholder="Tell us about your goals"></textarea>
-          </label>
+        <form
+  id="contactForm"
+  action="https://formsubmit.co/6e49ffdf9bb855ae53c07a5af1f0eec"
+  method="POST"
+>
+         
+<label>Name
+  <input type="text" name="name" required placeholder="Your name">
+</label>
+
+<label>Email
+  <input type="email" name="email" required placeholder="you@company.com">
+</label>
+
+<label>Phone
+  <input type="tel" name="phone" placeholder="+91">
+</label>
+
+<label>Service needed
+  <select name="service" required>
+    <option value="">Select a service</option>
+    <option>SEO &amp; Local SEO</option>
+    <option>Web Development</option>
+    <option>Video Editing</option>
+    <option>Social Media Marketing</option>
+    <option>Performance Ads</option>
+    <option>Content Creation</option>
+    <option>Printing Designing</option>
+    <option>Influencer Marketing</option>
+  </select>
+</label>
+
+<label>Message
+  <textarea name="message" placeholder="Tell us about your goals"></textarea>
+</label>
+
 
           <button class="btn" type="submit">Book My Free Consultation</button>
           <div class="ok">Thanks! We’ll get back to you within 24 hours.</div>
