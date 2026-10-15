@@ -1,7 +1,4 @@
-```javascript
-// ===================================
-// MOBILE MENU
-// ===================================
+
 
 const burger = document.getElementById('burger');
 const menu = document.getElementById('menu');
@@ -21,9 +18,6 @@ if (burger && menu) {
 }
 
 
-// ===================================
-// CONTACT FORM - WEB3FORMS
-// ===================================
 
 const contactForm = document.getElementById('contactForm');
 
@@ -88,4 +82,4 @@ if (contactForm) {
     }
   });
 }
-```
+
