@@ -36,6 +36,10 @@ if (contactForm) {
 
     try {
       const formData = new FormData(contactForm);
+      formData.set(
+  "access_key",
+  contactForm.querySelector('[name="access_key"]').value
+);
 
       const response = await fetch(
         'https://api.web3forms.com/submit',
