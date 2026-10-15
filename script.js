@@ -14,12 +14,3 @@ menu.querySelectorAll('a').forEach(function (link) {
   });
 });
 
-const form = document.getElementById('contactForm');
-
-form.addEventListener('submit', function (event) {
-  event.preventDefault();
-
-  form.querySelector('.ok').style.display = 'block';
-
-  form.reset();
-});
