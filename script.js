@@ -51,15 +51,24 @@ if (contactForm) {
 
       const result = await response.json();
 
-      if (result.success) {
-        alert('Thank you! Your message has been sent.');
-        contactForm.reset();
-      } else {
-        alert('Could not send message: ' + result.message);
-      }
-    } catch (error) {
-      alert('Network error. Please try again.');
-    } finally {
+     if (result.success) {
+  const message = document.getElementById('formMessage');
+
+  message.textContent =
+    'Thank you for reaching out! Our team will connect with you within 24 hours.';
+
+  message.style.display = 'block';
+  contactForm.reset();
+} else {
+  const message = document.getElementById('formMessage');
+  message.textContent = 'Sorry, your message could not be sent. Please try again.';
+  message.style.display = 'block';
+}
+    }  catch (error) {
+  const message = document.getElementById('formMessage');
+  message.textContent = 'Network error. Please try again.';
+  message.style.display = 'block';
+}
       if (submitButton) {
         submitButton.disabled = false;
         submitButton.textContent = originalText;
