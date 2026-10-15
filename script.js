@@ -14,3 +14,53 @@ menu.querySelectorAll('a').forEach(function (link) {
   });
 });
 
+
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const submitButton = contactForm.querySelector(
+      'button[type="submit"], input[type="submit"]'
+    );
+
+    const originalText = submitButton
+      ? submitButton.textContent
+      : '';
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+    }
+
+    try {
+      const formData = new FormData(contactForm);
+
+      const response = await fetch(
+        'https://api.web3forms.com/submit',
+        {
+          method: 'POST',
+          body: formData
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert('Thank you! Your message has been sent.');
+        contactForm.reset();
+      } else {
+        alert('Could not send message: ' + result.message);
+      }
+    } catch (error) {
+      alert('Network error. Please try again.');
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+      }
+    }
+  });
+}
+
