@@ -482,12 +482,12 @@ addFaqSchema();
 
     if (href.indexOf('blog-post.html?post=') === 0) {
       openPost(decodeURIComponent(href.split('post=')[1]));
-    } else if (href === 'blog.html') {
-      show('blog');
-      window.scrollTo(0, 0);
-    } else if (href === 'faq.html') {
-      show('faq');
-      window.scrollTo(0, 0);
+    } else if (href === 'blog.html' || href === '#blog') {
+    show('blog');
+    window.scrollTo(0, 0);
+    } else if (href === 'faq.html' || href === '#faq') {
+    show('faq');
+    window.scrollTo(0, 0);
     } else {
       goToSection(href.split('#')[1] || 'home');
     }
